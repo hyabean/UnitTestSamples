@@ -52,6 +52,16 @@ namespace ProfitLossServer.UnitTests
         }
 
         [Test]
+        public void Add_CallWithTypeValue_ReturnSum()
+        {
+            var calculator = Substitute.For<ICalculator>();
+
+            calculator.Add(Arg.Any<int>(), Arg.Any<int>()).Returns(x => (int)x[0] + (int)x[1]);
+
+            Assert.That(calculator.Add(10, 20), Is.EqualTo(30));
+        }
+
+        [Test]
         public void Add_CallWithValue_ReturnValue()
         {
             var calculator = Substitute.For<ICalculator>();
