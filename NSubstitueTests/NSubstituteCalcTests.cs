@@ -95,7 +95,6 @@ namespace ProfitLossServer.UnitTests
             Assert.That(eventWasRaised);
         }
 
-
         [Test]
         public void FellInLove_RaiseEventWithTypedArg_WasRaised()
         {
